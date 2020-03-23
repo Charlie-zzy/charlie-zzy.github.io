@@ -68,6 +68,17 @@
 
   
   
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?922df352f879ba4d1b4423d377b11b35";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
 </head>
 
 <body>
@@ -470,80 +481,13 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这篇文章是为那些伸手党和小白准备的，所以一切步骤都尽可能的简化。</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>首先，我们需要<a href="https://www.github.com/signup" target="_blank" rel="noopener">注册一个<em>Github</em>账户</a>。在注册页面输入<strong>Username</strong>（唯一用户名），<strong>Email</strong>（你的邮箱）和<strong>Password</strong>（密码），然后直接选择Free账户，填写资料（可选）并按照要求点击邮件里的链接进行验证。</p>
-<blockquote>
-<p>恭喜，你注册了一个<em>Github</em>账户！</p>
-</blockquote>
-<p>接下来<a href="https://github.com/new" target="_blank" rel="noopener">创建一个新仓库</a>，在<strong>Repository name</strong>处填写<code>用户名.github.io</code>（如<code>charlie-zzy.github.io</code>），勾选<code>Initialize this repository with a README</code>，不用管别的选项，直接确定即可。</p>
-<hr>
-<p>下载<a href="https://npm.taobao.org/mirrors/node/v12.16.1/node-v12.16.1-x64.msi" target="_blank" rel="noopener">node.js</a>，<a href="https://aka.ms/win32-x64-user-stable" target="_blank" rel="noopener">VScode</a>和<a href="https://github.com/git-for-windows/git/releases/download/v2.25.1.windows.1/Git-2.25.1-64-bit.exe" target="_blank" rel="noopener">Git</a>并安装。</p>
-<blockquote>
-<p>恭喜，你安装了<em>node.js</em>运行环境！</p>
-</blockquote>
-<blockquote>
-<p>恭喜，你安装了<em>VScode</em>代码编辑器！</p>
-</blockquote>
-<blockquote>
-<p>恭喜，你安装了<em>Git</em>包管理器！</p>
-</blockquote>
-<p>在电脑里新建一个文件夹用于存放博客文件（建议路径短一点）。</p>
-<p>同时按Win+R打开运行窗口，输入<strong>powershell</strong>并回车打开终端，在终端中输入<strong>cd 目录</strong>并回车进行切换目录（如<strong>cd D:/blog/</strong>） ，此时可以看到左侧的目录变成了你需要的目录，依次一行一行输入以下命令（并换行）进行安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis themes&#x2F;volantis</span><br><span class="line">npm i -S hexo-generator-search hexo-generator-json-content hexo-renderer-stylus</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>恭喜，你安装了<em>Hexo</em>博客引擎！</p>
-</blockquote>
-<blockquote>
-<p>恭喜，你安装了<em>Volantis</em>博客主题！</p>
-</blockquote>
-<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><p>当安装完成时，可以发现目录变成这样了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br><span class="line">    └── volantis</span><br></pre></td></tr></table></figure>
-<p>这些文件的意思：</p>
-<ul>
-<li><code>_config.yml</code>网站的<strong>配置信息</strong>，您可以在此配置大部分的参数。</li>
-<li><code>_posts</code>文件夹存放<strong>文章</strong>，你可以在这里编辑以<a href="https://www.luogu.com.cn/blog/luogu/how-to-use-markdown" target="_blank" rel="noopener"><em>Markdown</em></a>格式存放的文章。</li>
-<li><code>volantis</code>文件夹存放<strong>主题文件</strong>，里面也有一个<code>_config.yml</code>是<strong>主题</strong>的<strong>配置信息</strong>。</li>
-</ul>
-<p>输入以下命令可以新建文章，然后在<code>_posts</code>目录找到这个文件使用<em>VScode</em>打开。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文章名</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>恭喜，你新建了一篇文章！</p>
-</blockquote>
-<p>在VScode中，点击页面右上角<em>书与放大镜</em>按钮可以实时预览最终的样子，参考<a href="https://www.luogu.com.cn/blog/luogu/how-to-use-markdown" target="_blank" rel="noopener">这篇帮助</a>可以了解Markdown的语法。</p>
-<p>当你写完并参考<a href="https://volantis.js.org" target="_blank" rel="noopener">Volantis主题文档</a>和<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">Hexo文档</a>修改了自己喜欢的配置后，就可以发布了。</p>
-<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ul>
-<li>运行<code>hexo clean</code>清除缓存</li>
-<li>运行<code>hexo g</code>生成文件</li>
-<li>运行<code>hexo s</code>开启本地预览（Ctrl+C退出）</li>
-</ul>
-<p>打开浏览器，输入<strong>localhost:4000</strong>，你就会看到自己的博客。</p>
-<blockquote>
-<p>恭喜，你做好了博客！</p>
-</blockquote>
-<p>然而现在的博客只能在自己的电脑上预览，该如何部署到网站上呢？</p>
-<h2 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h2><p>输入以下命令，将尖括号中的用户名和邮箱（包括尖括号）替换为自己的并输入进刚才那个终端。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;&lt;Github注册的用户名&gt;&quot;</span><br><span class="line">git config --global user.email &lt;Github注册的邮箱&gt;</span><br><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;charlie-zzy&quot;</span><br><span class="line">git config --global user.email neycbs@outlook.com</span><br><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-<p>在输出的<code>Your public key has been saved in 什么的</code>后面的目录中找到<code>id_ras.pub</code>文件并拿记事本打开，全选，复制。</p>
-<p>在<a href="https://github.com/settings/keys" target="_blank" rel="noopener">这个页面</a>中点击<code>New SSH key</code>。其中<code>Title</code>随便填，<code>Key</code>把刚才复制的代码粘贴上去并保存。</p>
-<p>在终端输入以下代码，看看Hi后面是不是自己邮箱，是就成功了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>打开博客目录里的<code>_config.yml</code>配置文件（不是volantis文件夹里那个），在末尾找到<code>deploy</code>字样，修改后面的东西并替换成以下字符（注意空格）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:&lt;Github用户名&gt;&#x2F;&lt;Github用户名&gt;.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:charlie-zzy&#x2F;charlie-zzy.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>设置好后每次<code>hexo g</code>生成博客后，只要输入<code>hexo d</code>并等一会，让服务器刷新后就可以访问<code>&lt;Github用户名&gt;.github.io</code>这个网站啦！</p>
-<blockquote>
-<p>恭喜，你上传了博客！</p>
-</blockquote>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p><a href="https://volantis.js.org" target="_blank" rel="noopener">Volantis</a>作者<a href="https://www.xaoxuu.com" target="_blank" rel="noopener"><em>xaoxuu</em></a>真的超肝…一天一个版本，现在才配置好qwq</p>
-<p>其实这些步骤都是一次性的，真正有意思和挑战性的是修改配置（详见<a href="https://volantis.js.org" target="_blank" rel="noopener">主题文档</a>和<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">Hexo文档</a>。）</p>
-<p><del>这篇文章是博客更新后的第一篇技术性文章诶</del>qwq</p>
-<p>再会！</p>
-
       
+        
+          <div class="button readmore">
+            <a href="/article/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+              阅读更多 <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
         
       
     </div>
@@ -675,11 +619,6 @@
             id="categoriesE7818CE6B0B4"
             ><div class='name'>灌水</div><div class='badge'>(4)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/%E7%81%8C%E6%B0%B4/%E6%8A%A5%E7%BA%B8/" href="/categories/%E7%81%8C%E6%B0%B4/%E6%8A%A5%E7%BA%B8/"
-            id="categoriesE7818CE6B0B4E68AA5E7BAB8"
-            ><div class='name'>报纸</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box"
             title="/categories/%E7%A7%81%E4%BA%BA/" href="/categories/%E7%A7%81%E4%BA%BA/"
             id="categoriesE7A781E4BABA"
@@ -712,7 +651,7 @@
 
 
     <div class='content'>
-      <a href="/tags/FL-Studio/" style="font-size: 14px; color: #999">FL Studio</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/OI/" style="font-size: 24px; color: #6cf">OI</a> <a href="/tags/Vocaloid/" style="font-size: 14px; color: #999">Vocaloid</a> <a href="/tags/Volantis/" style="font-size: 14px; color: #999">Volantis</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%AD%A6%E6%9C%AF/" style="font-size: 24px; color: #6cf">学术</a> <a href="/tags/%E6%B4%9B%E8%B0%B7/" style="font-size: 14px; color: #999">洛谷</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/%E7%81%8C%E6%B0%B4/" style="font-size: 14px; color: #999">灌水</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 14px; color: #999">音乐</a> <a href="/tags/%E9%A2%93%E5%BA%9F/" style="font-size: 14px; color: #999">颓废</a>
+      <a href="/tags/FL-Studio/" style="font-size: 14px; color: #999">FL Studio</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/OI/" style="font-size: 14px; color: #999">OI</a> <a href="/tags/Vocaloid/" style="font-size: 14px; color: #999">Vocaloid</a> <a href="/tags/Volantis/" style="font-size: 14px; color: #999">Volantis</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%AD%A6%E6%9C%AF/" style="font-size: 24px; color: #6cf">学术</a> <a href="/tags/%E6%8A%A5%E7%BA%B8/" style="font-size: 14px; color: #999">报纸</a> <a href="/tags/%E6%B4%9B%E8%B0%B7/" style="font-size: 14px; color: #999">洛谷</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 14px; color: #999">音乐</a> <a href="/tags/%E9%A2%93%E5%BA%9F/" style="font-size: 14px; color: #999">颓废</a>
     </div>
   </section>
 
