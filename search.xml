@@ -4,12 +4,18 @@
   
     
     <entry>
-      <title>qwq</title>
+      <title>&lt;/&gt;test</title>
       <link href="/article/qwq/"/>
       <url>/article/qwq/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>awa</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 网站测试专用 </category>
+          
+      </categories>
       
       
     </entry>
