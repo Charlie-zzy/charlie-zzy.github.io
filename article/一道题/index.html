@@ -16,13 +16,8 @@
 
   <!-- 页面元数据 -->
   
-    <title>语录大全 - Charlie&#39;s Blog</title>
+    <title>一道题 - Charlie&#39;s Blog</title>
   
-    <meta name="keywords" content="洛谷">
-  
-  
-    <meta name="description" content="记录hello,Luogu群中各大神犇的语录.
-目前已经收集了100张语录！">
   
 
   <!-- feed -->
@@ -371,8 +366,8 @@
         
   
     <h1 class="title">
-      <a href="/article/%E8%AF%AD%E5%BD%95%E5%A4%A7%E5%85%A8/">
-        语录大全
+      <a href="/article/%E4%B8%80%E9%81%93%E9%A2%98/">
+        一道题
       </a>
     </h1>
   
@@ -400,10 +395,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-23T10:59:42+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-07T11:14:21+08:00">
   <a class='notlink'>
     <i class="fas fa-save fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年3月23日</p>
+    <p>更新于：2021年1月7日</p>
   </a>
 </div>
 
@@ -411,14 +406,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E7%81%8C%E6%B0%B4/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>灌水</p>
-    </a>
-  </div>
-
 
           
         
@@ -427,13 +414,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：24字</p>
+      <p>字数：815字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -469,13 +456,20 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>记录<code>hello,Luogu</code>群中各大神犇的语录.</p>
-<p>目前已经收集了<code>100</code>张语录！</p>
-<a id="more"></a>
+          <p>（本部数特综数压轴题）圆O的圆周上有一只猫和$n$只老鼠，设猫的初始位置为洞口$P$，老鼠初始位置任意，且猫和老鼠均可自由在圆周上移动，猫的速度是老鼠的$k(k&gt;1)$倍。当猫和老鼠位于同一位置时，称猫<code>捉到</code>了这只老鼠；当老鼠位于洞口且猫不在洞口时，称这只老鼠<code>逃脱</code>，显然猫和老鼠都在洞口时猫仍然抓到了这只老鼠。</p>
+<p>若要让猫在有限时间内<code>捉到</code>所有老鼠，不让任何老鼠<code>逃脱</code>，且猫和老鼠都会选择最佳策略，那么$k$的最小值是？</p>
+<p>答案：$n=1$时$k_{min}=2$，$n&gt;1$时$k_{min}=3$。</p>
+<p>证明：分类讨论，当$n&gt;1$时从老鼠的角度分析，考虑离$P$最近的左右两只老鼠A和B，由于其他老鼠想要逃脱肯定没有A和B快，因此最优策略只能让它们俩跑向洞口。再从猫的角度分析，此时猫必然跑向离他最近的老鼠（假设是A）然后再次跑回洞口防止B逃脱，因为要想在有限时间内捉到老鼠必须主动出击，否则只会消耗时间。</p>
+<p>显然当A和B离猫距离相等时最优（因为如果B远是没有优势的，这时候肯定离洞口越近越好，便于冲刺。但如果比A还近，那么它们角色就交换了，所以距离相等最优）。而A的任务就是逃离猫，B的任务就是跑向洞口（因为距离相等，所以A和B关于$OP$对称，这时设猫跑向A，那么A一定要拖延时间远离洞口，而B一定会跑向洞口（反着跑有啥用），因此只能这样跑）。</p>
+<p>接着可以列方程，设A被捉住时的时间为$t$，A和B距洞口的距离为$L$，老鼠速度是$1$，那么猫的速度就是$k$。得</p>
+<p>$$kt-t=L$$</p>
+<p>所以</p>
+<p>$$t=L/(k-1)$$</p>
+<p>又因为猫赶回洞口时的时间为$2t$，那么当猫回到洞口时B移动了$2t$，一定小于等于$L$，得</p>
+<p>$$\frac{2L}{k-1}&lt;=L$$</p>
+<p>解得$k&gt;=3$，此时猫一定能捉住A并且回到P，于是只剩下了$n-1$只老鼠，问题就转化为以下两种情况：若只剩一只老鼠需要$k&gt;=2$（接下来要证明），还剩多于一只老鼠则按上面的方法分析，两种情况无论如何都能全部捉住，因此k的最小值一定为3.</p>
+<p>当$n=1$时猫仍然需要主动出击，由于是一个圆周，猫肯定会选择离老鼠距离最短的弧，那么老鼠肯定要走另外一条长的弧到达洞口。从老鼠的角度分析，它必须要让长的弧越短越好，但是当长弧小于一半周长时长弧就会变为短弧，所以最优策略一定是在猫正对面。当老鼠走完一半周长到达洞口时，猫必须得走完整个圆周才能及时捉住老鼠，显然$k&gt;=2$，证毕。</p>
 
-<div class="fancybox left" col='3'>
-              <p><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/001.png" alt="1"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/002.png" alt="2"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/003.png" alt="3"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/004.png" alt="4"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/005.png" alt="5"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/006.png" alt="6"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/007.png" alt="7"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/008.png" alt="8"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/009.png" alt="9"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/010.png" alt="10"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/011.png" alt="11"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/012.png" alt="12"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/013.png" alt="13"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/014.png" alt="14"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/015.png" alt="15"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/016.png" alt="16"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/017.png" alt="17"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/018.png" alt="18"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/019.png" alt="19"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/020.png" alt="20"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/021.png" alt="21"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/022.png" alt="22"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/023.png" alt="23"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/024.png" alt="24"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/025.png" alt="25"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/026.png" alt="26"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/027.png" alt="27"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/028.png" alt="28"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/029.png" alt="29"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/030.png" alt="30"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/031.png" alt="31"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/032.png" alt="32"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/033.png" alt="33"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/034.png" alt="34"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/035.png" alt="35"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/036.png" alt="36"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/037.png" alt="37"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/038.png" alt="38"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/039.png" alt="39"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/040.png" alt="40"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/041.png" alt="41"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/042.png" alt="42"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/043.png" alt="43"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/044.png" alt="44"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/045.png" alt="45"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/046.png" alt="46"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/047.png" alt="47"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/048.png" alt="48"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/049.png" alt="49"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/050.png" alt="50"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/051.png" alt="51"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/052.png" alt="52"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/053.png" alt="53"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/054.png" alt="54"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/055.png" alt="55"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/056.png" alt="56"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/057.png" alt="57"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/058.png" alt="58"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/059.png" alt="59"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/060.png" alt="60"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/061.png" alt="61"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/062.png" alt="62"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/063.png" alt="63"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/064.png" alt="64"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/065.png" alt="65"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/066.png" alt="66"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/067.png" alt="67"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/068.png" alt="68"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/069.png" alt="69"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/070.png" alt="70"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/071.png" alt="71"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/072.png" alt="72"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/073.png" alt="73"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/074.png" alt="74"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/075.png" alt="75"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/076.png" alt="76"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/077.png" alt="77"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/078.png" alt="78"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/079.png" alt="79"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/080.png" alt="80"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/081.png" alt="81"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/082.png" alt="82"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/083.png" alt="83"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/084.png" alt="84"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/085.png" alt="85"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/086.png" alt="86"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/087.png" alt="87"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/088.png" alt="88"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/089.png" alt="89"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/090.png" alt="90"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/091.png" alt="91"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/092.png" alt="92"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/093.png" alt="93"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/094.png" alt="94"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/095.png" alt="95"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/096.png" alt="96"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/097.png" alt="97"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/098.png" alt="98"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/099.png" alt="99"><br><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/luogu/100.png" alt="100"></p>
-            </div>
           
             <br>
             
@@ -514,7 +508,7 @@
           <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>创建于: 2020年3月5日</p>
+    <p>创建于: 2021年1月7日</p>
   </a>
 </div>
 
@@ -522,9 +516,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%B4%9B%E8%B0%B7/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>洛谷</p></a></div>
-
 
         
       
@@ -536,8 +527,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.charlieblog.xyz/article/%E8%AF%AD%E5%BD%95%E5%A4%A7%E5%85%A8/&title=语录大全 - Charlie's Blog&summary=记录hello,Luogu群中各大神犇的语录.
-目前已经收集了100张语录！"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.charlieblog.xyz/article/%E4%B8%80%E9%81%93%E9%A2%98/&title=一道题 - Charlie's Blog&summary="
           
           >
           
@@ -549,8 +539,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.charlieblog.xyz/article/%E8%AF%AD%E5%BD%95%E5%A4%A7%E5%85%A8/&title=语录大全 - Charlie's Blog&summary=记录hello,Luogu群中各大神犇的语录.
-目前已经收集了100张语录！"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.charlieblog.xyz/article/%E4%B8%80%E9%81%93%E9%A2%98/&title=一道题 - Charlie's Blog&summary="
           
           >
           
@@ -562,8 +551,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://www.charlieblog.xyz/article/%E8%AF%AD%E5%BD%95%E5%A4%A7%E5%85%A8/&title=语录大全 - Charlie's Blog&summary=记录hello,Luogu群中各大神犇的语录.
-目前已经收集了100张语录！"
+          href="http://service.weibo.com/share/share.php?url=https://www.charlieblog.xyz/article/%E4%B8%80%E9%81%93%E9%A2%98/&title=一道题 - Charlie's Blog&summary="
           
           >
           
@@ -577,7 +565,7 @@
         <div class='hoverbox'>
           <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADqklEQVR42u3aQW7DMAwEwPz/0+m9QGBxSTdMOroVtS16lAPB9eNpReuBABw4cOAscOCWwD3C9fv+lxtdXH/1/LTO6n7HzwMHDhw4cODAgVsGd9wADkGd7tOtL93/5f3gwIEDBw4cOHBL4dKG9y6gaoOa1nncQIMDBw4cOHDgwH0JXFrgNHgKCg4cOHDgwIEDB642GEwb7Kv7pgJqcODAgQMHDhy4T4PrBr7poLIafP/1QYMDBw4cOHDgwG2Fq67Twrb+Hb8vOHDgwIEDBw7cErjumh4wnv4/HUy23xccOHDgwIEDB24J3OkgcjpQntqnG2iX6wIHDhw4cODAgVsClwbJp9engXT1xavPjX8A4MCBAwcOHDhwy+FOA9604OrgMR2IpgPZ9gQYHDhw4MCBAwfuZripjaof+HUHjWkDnAbi4MCBAwcOHDhw2+BSkGqwXG2EuwPHuMG92g8cOHDgwIEDB24JXPeDu/QDv2rjWa03fY/LesGBAwcOHDhw4JbBpYF02jBXoaca5mrAfTkBBgcOHDhw4MCBezNc2shO3Vc9wBS8eqDgwIEDBw4cOHBb4dJg9zm80gC8G6hXfwDgwIEDBw4cOHDb4boFdAeL1frSxrZ8PThw4MCBAwcO3FK47gZ3XZceRLWhjweZ4MCBAwcOHDhwfwyXDhCrQXK1Ub77OdWBKjhw4MCBAwcO3Da4KmB3gJjeP9XoVgNucODAgQMHDhy4T4FLG8YqVPeFqgdcrevlPuDAgQMHDhw4cEvgqgFvWlg3SJ5upKt1gQMHDhw4cODAbYObDqarsKdgVdD0ueDAgQMHDhw4cJ8GN1VIWthUI5sG08cHDg4cOHDgwIEDtwRuuoHtBtDdYLzbwB9/WAgOHDhw4MCBA/dmuPSDvamCuw1zdd/2AYEDBw4cOHDgwC2Hmwqi0wO4+8DSgwMHDhw4cODAgdsClzaqaUN72miOfQjYDaDBgQMHDhw4cOCWwnXXNMBxMNwchMb1gwMHDhw4cODALYGbbhCnnpsOWKsNfLVBBwcOHDhw4MCB2wY31fB2A+3qC6cwcRAODhw4cODAgQO3FC59oep1U9enz4kbfnDgwIEDBw4cuC+BqwbQ6QDz9HlTwTU4cODAgQMHDtx/gZtuRO86gOpBHQfS4MCBAwcOHDhwb4ZLA+kq8GnDGX8AePhe5QMEBw4cOHDgwIFbBhcHtCFQ90PEKaDyB4/gwIEDBw4cOHBL4KzaAgcOHDhwFjhwb14/TR0FzNhdzvcAAAAASUVORK5CYII=">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADo0lEQVR42u3aQW5bMQwFQN//0u2+gGHyUfJn0tEucCyJo80LmdcfK1ovBODAgQNngQO3BO4Vrn+//26/T+e8vWDxvO7+43rBgQMHDhw4cOCWwZUDYBFkCli9V/Uhj9ULDhw4cODAgQO3FG4aeKvBdhqgu/seqxccOHDgwIEDB+6XwJ1uQHY/PxWYwYEDBw4cOHDg/je4tLHZhTodsMGBAwcOHDhw4H4bXDdAThucabCtQqZBGRw4cODAgQMH7qfApcH1p/4c1wsOHDhw4MCBA7cE7tRKG5O3fu/WAgcOHDhw4MCB2wJXLTgdLJ9+iGojM71n+y8HcODAgQMHDhy4h+Cmhd1ufJ5qWJYHzp+gwYEDBw4cOHDglsDdGkinwbocRJvndM9/Wx84cODAgQMHDtwSuGkgvBU4q/tNG6LdBig4cODAgQMHDtwWuGmwPRV4u43N9PPuAB0cOHDgwIEDB24rXBpk04tMC5iubsOzPMkHBw4cOHDgwIF7CO7UQPp0A7MKcHvwDQ4cOHDgwIEDtw2uu9E00Hb3TxunU0Bw4MCBAwcOHLjtcN2CbhU+bUDe2jduZIIDBw4cOHDgwH0Jrh0ED8FW1zT4TvcHBw4cOHDgwIHbBle9SDfApgWfOid92LgDDA4cOHDgwIED92W4tEGYBubuvqeC8TTQgwMHDhw4cODAbYNLB7lpwWlw7QbY6So3MsGBAwcOHDhw4B6CuzUorgbPKUgaeNNBNjhw4MCBAwcO3Ba46SB3OjCeBuZpUO6eAw4cOHDgwIEDtxWuWkDaiKwG6u7g+HSjMx5IgwMHDhw4cODAfQnu1mA6bXxOH/TWfcGBAwcOHDhw4LbBTRt9aSFp0E7vM70XOHDgwIEDBw7cT4ObDqC7QN0AnDYw433AgQMHDhw4cOCWwXWDYbcRWd0nbTCmg+72g4MDBw4cOHDgwC2FSy9QDZJp4zQFSO/x9nxw4MCBAwcOHLglcNN1qgGaFtqFTh8CHDhw4MCBAwduG9z04tML31rdhmt1IA4OHDhw4MCBA7cN7nQj89Rgubp/N8jGARkcOHDgwIEDB24p3KlA2Q3Ap74/HUh/fCBw4MCBAwcOHLhfCtctcBpMT+/7WAAGBw4cOHDgwIH7MtypwtqD4fAfGNc0MsGBAwcOHDhw4B4eSJ8aZHcLSx+m24gFBw4cOHDgwIHbDpcOcNOCnwrO04cDBw4cOHDgwIHbAmc1gzwCcODAgbPAgXt2/QVEqf1EgfT4PQAAAABJRU5ErkJggg==">
           </div>
         </div>
       
@@ -597,27 +585,19 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/article/%E5%85%B3%E4%BA%8ERobotMaster%E9%9D%92%E5%B0%91%E5%B9%B4%E6%8C%91%E6%88%98%E8%B5%9B/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>关于RobotMaster青少年挑战赛</p>
-                <p class='content'>放弃了，初三压根没时间 qwq
-
-
-NEYC有志者请仔细阅读相关资料并联系我！
-一共五个人的团队还差三人（逃
-官网辽宁站资讯报名(需组建战队，暂无)
-资源下载 PPT介绍
- 制作规范
- 参赛攻略...</p>
-              </a>
             
-            
-              <a class='next' href='/article/%E7%9E%8E%E6%95%B4%E7%9A%84%E9%9F%B3%E4%B9%90/'>
-                <p class='title'>瞎整的音乐<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>想当年我也是个时常咕咕咕的Producer&amp;Vocaloider啊!
+              <a class='next' href='/article/2020%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/'>
+                <p class='title'>2020年度总结<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>2020年度总结（上）  NEYC(BS) 1804001
 
-纯音乐2020-01-27 卡农
-V家2020-??-?? 眼保健操（V家版）
-我真是疯了，竟然想搞这个
+谨以此总结，纪念这不平凡的一年。
+
+
+
+一、学习总结
+放飞自我
+
+  2019年还信心满满进前一百的我，面对
 </p>
               </a>
             
@@ -669,7 +649,7 @@ V家2020-??-?? 眼保健操（V家版）
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\article\瞎整的音乐\" title="瞎整的音乐" rel="bookmark">瞎整的音乐</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\article\2020年度总结\" title="2020年度总结" rel="bookmark">2020年度总结</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -684,11 +664,32 @@ V家2020-??-?? 眼保健操（V家版）
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    tags: "ams",
+    macros: {
+      href: "{}"
+    }
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|dno",
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+
+
 
 
   <script>
     window.subData = {
-      title: '语录大全',
+      title: '一道题',
       tools: true
     }
   </script>

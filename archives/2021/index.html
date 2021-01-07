@@ -361,9 +361,107 @@
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/article/%E4%B8%80%E9%81%93%E9%A2%98/">
+      一道题
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+            
+
+          
+        
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>创建于: 2021年1月7日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：815字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：2分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>（本部数特综数压轴题）圆O的圆周上有一只猫和$n$只老鼠，设猫的初始位置为洞口$P$，老鼠初始位置任意，且猫和老鼠均可自由在圆周上移动，猫的速度是老鼠的$k(k&gt;1)$倍。当猫和老鼠位于同一位置时，称猫<code>捉到</code>了这只老鼠；当老鼠位于洞口且猫不在洞口时，称这只老鼠<code>逃脱</code>，显然猫和老鼠都在洞口时猫仍然抓到了这只老鼠。</p>
+<p>若要让猫在有限时间内<code>捉到</code>所有老鼠，不让任何老鼠<code>逃脱</code>，且猫和老鼠都会选择最佳策略，那么$k$的最小值是？</p>
+<p>答案：$n=1$时$k_{min}=2$，$n&gt;1$时$k_{min}=3$。</p>
+<p>证明：分类讨论，当$n&gt;1$时从老鼠的角度分析，考虑离$P$最近的左右两只老鼠A和B，由于其他老鼠想要逃脱肯定没有A和B快，因此最优策略只能让它们俩跑向洞口。再从猫的角度分析，此时猫必然跑向离他最近的老鼠（假设是A）然后再次跑回洞口防止B逃脱，因为要想在有限时间内捉到老鼠必须主动出击，否则只会消耗时间。</p>
+<p>显然当A和B离猫距离相等时最优（因为如果B远是没有优势的，这时候肯定离洞口越近越好，便于冲刺。但如果比A还近，那么它们角色就交换了，所以距离相等最优）。而A的任务就是逃离猫，B的任务就是跑向洞口（因为距离相等，所以A和B关于$OP$对称，这时设猫跑向A，那么A一定要拖延时间远离洞口，而B一定会跑向洞口（反着跑有啥用），因此只能这样跑）。</p>
+<p>接着可以列方程，设A被捉住时的时间为$t$，A和B距洞口的距离为$L$，老鼠速度是$1$，那么猫的速度就是$k$。得</p>
+<p>$$kt-t=L$$</p>
+<p>所以</p>
+<p>$$t=L/(k-1)$$</p>
+<p>又因为猫赶回洞口时的时间为$2t$，那么当猫回到洞口时B移动了$2t$，一定小于等于$L$，得</p>
+<p>$$\frac{2L}{k-1}&lt;=L$$</p>
+<p>解得$k&gt;=3$，此时猫一定能捉住A并且回到P，于是只剩下了$n-1$只老鼠，问题就转化为以下两种情况：若只剩一只老鼠需要$k&gt;=2$（接下来要证明），还剩多于一只老鼠则按上面的方法分析，两种情况无论如何都能全部捉住，因此k的最小值一定为3.</p>
+<p>当$n=1$时猫仍然需要主动出击，由于是一个圆周，猫肯定会选择离老鼠距离最短的弧，那么老鼠肯定要走另外一条长的弧到达洞口。从老鼠的角度分析，它必须要让长的弧越短越好，但是当长弧小于一半周长时长弧就会变为短弧，所以最优策略一定是在猫正对面。当老鼠走完一半周长到达洞口时，猫必须得走完整个圆周才能及时捉住老鼠，显然$k&gt;=2$，证毕。</p>
+
+      
+        
+      
+    </div>
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -422,13 +520,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.3k字</p>
+      <p>字数：47字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4分钟</p>
+      <p>时长：1分钟</p>
     </a>
   </div>
 
@@ -471,6 +569,27 @@
     
     <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
     
+    
+      <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    tags: "ams",
+    macros: {
+      href: "{}"
+    }
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|dno",
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+
     
 
   
@@ -759,6 +878,27 @@
 
 	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
 	
+
+	
+	    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    tags: "ams",
+    macros: {
+      href: "{}"
+    }
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|dno",
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
 
 	
 
