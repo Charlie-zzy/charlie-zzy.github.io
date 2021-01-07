@@ -399,7 +399,7 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-07T11:54:22+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-07T12:07:03+08:00">
   <a class='notlink'>
     <i class="fas fa-save fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月7日</p>
@@ -471,10 +471,10 @@
           <p>（本部数特综数压轴题）圆$O$的圆周上有一只猫和$n$只老鼠，设猫的初始位置为洞口$P$，老鼠初始位置任意，且猫和老鼠均可自由在圆周上移动，猫的速度是老鼠的$k;;(k&gt;1)$倍。当猫和老鼠位于同一位置时，称猫<code>捉住</code>了这只老鼠；当老鼠位于洞口且猫不在洞口时，称这只老鼠<code>逃脱</code>，显然猫和老鼠都在洞口时猫仍然<code>捉住</code>了这只老鼠。</p>
 <p>若要让猫在有限时间内<code>捉住</code>所有老鼠，不让任何老鼠<code>逃脱</code>，且猫和老鼠都会选择最佳策略，那么$k$的最小值是？</p>
 <a id="more"></a>
-
+<p><img src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/cat%20and%20mice.png" alt="题面描述"></p>
 <h2 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h2><p>$n=1$时$k_{min}=2$，$n&gt;1$时$k_{min}=3$。</p>
 <h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>分类讨论：</p>
-<h4 id="当-n-gt-1-时"><a href="#当-n-gt-1-时" class="headerlink" title="当$n&gt;1$时"></a>当$n&gt;1$时</h4><p>从老鼠的角度分析，考虑离$P$最近的左右两只老鼠$\mathtt{A}$和$\mathtt{B}$，由于其他老鼠想要<code>逃脱</code>肯定没有$\mathtt{A}$和$\mathtt{B}$快，因此最优策略只能让它们俩跑向洞口。再从猫的角度分析，此时猫必然跑向离他最近的老鼠（假设是$\mathtt{A}$）然后再次跑回洞口防止$\mathtt{B}$<code>逃脱</code>，因为要想在有限时间内捉到老鼠必须主动出击，否则只会消耗时间。</p>
+<h3 id="当-n-gt-1-时"><a href="#当-n-gt-1-时" class="headerlink" title="当$n&gt;1$时"></a>当$n&gt;1$时</h3><p>从老鼠的角度分析，考虑离$P$最近的左右两只老鼠$\mathtt{A}$和$\mathtt{B}$，由于其他老鼠想要<code>逃脱</code>肯定没有$\mathtt{A}$和$\mathtt{B}$快，因此最优策略只能让它们俩跑向洞口。再从猫的角度分析，此时猫必然跑向离他最近的老鼠（假设是$\mathtt{A}$）然后再次跑回洞口防止$\mathtt{B}$<code>逃脱</code>，因为要想在有限时间内捉到老鼠必须主动出击，否则只会消耗时间。</p>
 <p>显然当$\mathtt{A}$和$\mathtt{B}$离猫距离相等时最优（因为如果$\mathtt{B}$远是没有优势的，这时候肯定离洞口越近越好，便于冲刺。但如果比$\mathtt{A}$还近，那么它们角色就交换了，所以距离相等最优）。而$\mathtt{A}$的任务就是逃离猫，$\mathtt{B}$的任务就是跑向洞口（因为距离相等，所以$\mathtt{A}$和$\mathtt{B}$关于$OP$对称，这时设猫跑向$\mathtt{A}$，那么$\mathtt{A}$一定要拖延时间远离洞口，而$\mathtt{B}$一定会跑向洞口（反着跑有啥用），因此只能这样跑）。</p>
 <p>接着可以列方程，设$\mathtt{A}$被<code>捉住</code>时的时间为$t$，$\mathtt{A}$和$\mathtt{B}$距洞口的距离为$L$，老鼠速度是$1$，那么猫的速度就是$k$。得</p>
 <p>$$kt-t=L$$</p>
@@ -483,7 +483,7 @@
 <p>又因为猫赶回洞口时的时间为$2t$，那么当猫回到洞口时$\mathtt{B}$移动了$2t$，一定小于等于$L$，得</p>
 <p>$$\frac{2L}{k-1} \leqslant L$$</p>
 <p>解得$k \leqslant 3$，此时猫一定能<code>捉住</code>$\mathtt{A}$并且回到P，于是只剩下了$n-1$只老鼠，问题就转化为以下两种情况：若只剩一只老鼠需要$k \leqslant 2$（接下来要证明），还剩多于一只老鼠则按上面的方法分析，两种情况无论如何都能全部<code>捉住</code>，因此k的最小值一定为3.</p>
-<h4 id="当-n-1-时"><a href="#当-n-1-时" class="headerlink" title="当$n=1$时"></a>当$n=1$时</h4><p>猫仍然需要主动出击，由于是一个圆周，猫肯定会选择离老鼠距离最短的弧，那么老鼠肯定要走另外一条长的弧到达洞口。从老鼠的角度分析，它必须要让长的弧越短越好，但是当长弧小于一半周长时长弧就会变为短弧，所以最优策略一定是在猫正对面。当老鼠走完一半周长到达洞口时，猫必须得走完整个圆周才能及时<code>捉住</code>老鼠，显然$k \leqslant 2$，证毕。</p>
+<h3 id="当-n-1-时"><a href="#当-n-1-时" class="headerlink" title="当$n=1$时"></a>当$n=1$时</h3><p>猫仍然需要主动出击，由于是一个圆周，猫肯定会选择离老鼠距离最短的弧，那么老鼠肯定要走另外一条长的弧到达洞口。从老鼠的角度分析，它必须要让长的弧越短越好，但是当长弧小于一半周长时长弧就会变为短弧，所以最优策略一定是在猫正对面。当老鼠走完一半周长到达洞口时，猫必须得走完整个圆周才能及时<code>捉住</code>老鼠，显然$k \leqslant 2$，证毕。</p>
 
           
             <br>
@@ -808,7 +808,7 @@ window.MathJax = {
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#答案"><span class="toc-text">答案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#证明"><span class="toc-text">证明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#当-n-gt-1-时"><span class="toc-text">当$n&gt;1$时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#当-n-1-时"><span class="toc-text">当$n&#x3D;1$时</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#答案"><span class="toc-text">答案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#证明"><span class="toc-text">证明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#当-n-gt-1-时"><span class="toc-text">当$n&gt;1$时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当-n-1-时"><span class="toc-text">当$n&#x3D;1$时</span></a></li></ol></li></ol>
     </div>
   </section>
 
